@@ -1,0 +1,12 @@
+[
+  { "name": "Basket Random", "file": "clbasketrandom.html" },
+  { "name": "Basket Random Good", "file": "clbasketrandomgood.html" },
+  { "name": "Boxing Random", "file": "clboxingrandom.html" },
+  { "name": "Soccer Random", "file": "clsoccerrandom.html" },
+  { "name": "Soccer Random Good", "file": "clsoccerrandomgood.html" },
+  { "name": "Volley Random", "file": "clvolleyrandom.html" },
+
+  { "name": "Games 235", "file": "games235.html" },
+  { "name": "UBG 235", "file": "ubg235.html" },
+  { "name": "Frame", "file": "frame.html" }
+]
