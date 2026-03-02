@@ -1,40 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Basket Random - unblocked786 GameDistribution</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<title>2 Player Games</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 40px;
+}
 
-<meta name="generator" content="Construct 3">
+h1 {
+  margin-bottom: 30px;
+}
 
-	<link rel="manifest" href="appmanifest.json">
+.games {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
 
+a {
+  text-decoration: none;
+  background: #222;
+  padding: 15px 25px;
+  border-radius: 10px;
+  color: white;
+  transition: 0.2s;
+}
 
-<link rel="stylesheet" href="style.css">
+a:hover {
+  background: #444;
+}
+</style>
+</head>
+<body>
+
+<h1>2 Player Games</h1>
+
+<div class="games" id="games"></div>
 
 <script>
-window.addEventListener("keydown", function(e) {
-    // space and arrow keys
-    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
-        e.preventDefault();
-    }
-}, false);
+async function loadGames() {
+  const response = await fetch("data.json");
+  const games = await response.json();
+
+  const container = document.getElementById("games");
+
+  games.forEach(game => {
+    const link = document.createElement("a");
+    link.href = game.file;
+    link.textContent = game.name;
+    container.appendChild(link);
+  });
+}
+
+loadGames();
 </script>
 
-</head>
-<body style="overflow:hidden;">
-<div id="fb-root"></div>
-	<script src="box2d.wasm.js"></script>
-	<noscript>
-		<div id="notSupportedWrap">
-			<h2 id="notSupportedTitle">This content requires JavaScript</h2>
-			<p class="notSupportedMessage">JavaScript appears to be disabled. Please enable it to view this content.</p>
-			<p class="notSupportedMessage">This game was developed with Construct. <a href="https://www.construct.net/en">Build your own games</a></p>
-		</div>
-	</noscript>
-	<script src="scripts/supportcheck.js"></script>
-	<script src="scripts/offlineclient.js"></script>
-	<script src="scripts/main.js"></script>
-	<script src="scripts/register-sw.js"></script>
 </body>
 </html>
